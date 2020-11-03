@@ -15,6 +15,7 @@ float average = 0;                // the average
 float targetWeight = 0;
 float difference = 0;
 int count = 0;
+char customKey = 1;
 
 float firstWarn = 0;
 float secondWarn = 0;
@@ -120,16 +121,13 @@ void loop() {
     }
   }
 
-  if(Serial.available())
+  if(customKeypad.getKey() == 'C')
   {
-    if (customKey == 'C') {
       targetWeight = getInput().toFloat(); 
-    }
   }
 }
 
 String getInput() {
-  char customKey = 1;
   Serial.print("Input: ");
   String result = "";
   while (true) {
@@ -156,6 +154,6 @@ String getInput() {
         result += customKey;
         Serial.print(customKey);
       }
-     
     }
+  return result;
 }
