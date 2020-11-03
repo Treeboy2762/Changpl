@@ -122,7 +122,9 @@ void loop() {
 
   if(Serial.available())
   {
-    targetWeight = getInput().toFloat();
+    if (customKey == 'C') {
+      targetWeight = getInput().toFloat(); 
+    }
   }
 }
 
