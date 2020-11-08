@@ -109,20 +109,20 @@ void loop() {
       tone(speaker, 329, 500);
       delay(200);
   }
-  else if(difference < -1 * thirdWarn) { // 5% 이내
+  else if(difference < -1 * thirdWarn) { // 초과시 경고음
       tone(speaker, 500, 100);
   }
-  else if(difference < thirdWarn) { // 10% 이내
+  else if(difference < thirdWarn) { // 5% 이내
       tone(speaker, 500, 10);
   }
-  else if(difference < secondWarn) { // 20% 이내
+  else if(difference < secondWarn) { // 10% 이내
     count = count + 1;
     if (count > 1) {
       tone(speaker, 500, 10);
       count = 0;
     }
   }
-  else if(difference < firstWarn) {
+  else if(difference < firstWarn) { // 20% 
     count = count + 1;
     if (count > 2) {
       tone(speaker, 500, 10);
